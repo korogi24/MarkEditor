@@ -26,6 +26,9 @@ namespace MarkEditor
         public MainWindow()
         {
             InitializeComponent();
+
+            this.ExtendsContentIntoTitleBar = true; // Extend the content into the title bar and hide the default titlebar
+            this.SetTitleBar(TitleBar); // Set the custom title bar
         }
     }
 }

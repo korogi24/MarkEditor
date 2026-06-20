@@ -6,6 +6,7 @@
     xmlns:local="using:MarkEditor"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
     xmlns:ui="using:CommunityToolkit.WinUI"
     mc:Ignorable="d"
@@ -16,6 +17,42 @@
     </Window.SystemBackdrop>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         
+        <TitleBar Grid.Row="0" x:Name="TitleBar" Title="MarkEditor" />
+
+        <controls:TabbedCommandBar Grid.Row="1" Margin="5,0">
+            <controls:TabbedCommandBar.MenuItems>
+                <controls:TabbedCommandBarItem Header="ファイル">
+                    <AppBarButton Icon="Add" Label="新規作成" />
+                    <AppBarButton Icon="OpenFile" Label="開く" />
+                    <AppBarSeparator />
+                    <AppBarButton Icon="Save" Label="上書き保存" />
+                    <AppBarElementContainer>
+                        <muxc:SplitButton>
+                            <StackPanel Orientation="Horizontal" Spacing="12">
+                                <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}"
+                                          FontSize="16"
+                                          Glyph="&#xE792;"/>
+                                <TextBlock Text="名前をつけて保存" />
+                            </StackPanel>
+                            <muxc:SplitButton.Flyout>
+                                <MenuFlyout>
+                                    <MenuFlyoutItem Text=".md で保存" />
+                                    <MenuFlyoutItem Text=".txt で保存" />
+                                </MenuFlyout>
+                            </muxc:SplitButton.Flyout>
+                        </muxc:SplitButton>
+                    </AppBarElementContainer>
+                    <AppBarSeparator />
+                    <AppBarButton Icon="Setting" Label="設定" />
+                    <AppBarButton Icon="{ui:FontIcon Glyph=&#xE946;}" Label="バージョン情報" />
+                </controls:TabbedCommandBarItem>
+            </controls:TabbedCommandBar.MenuItems>
+        </controls:TabbedCommandBar>
     </Grid>
 </Window>
