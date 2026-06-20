@@ -6,6 +6,8 @@
     xmlns:local="using:MarkEditor"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:ui="using:CommunityToolkit.WinUI"
     mc:Ignorable="d"
     Title="MarkEditor">
 
@@ -14,6 +16,6 @@
     </Window.SystemBackdrop>
 
     <Grid>
-
+        
     </Grid>
 </Window>
