@@ -34,22 +34,7 @@
                     <AppBarSeparator />
 
                     <AppBarButton Icon="Save" Label="上書き保存" />
-                    <AppBarElementContainer>
-                        <SplitButton>
-                            <StackPanel Orientation="Horizontal" Spacing="12">
-                                <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}"
-                                          FontSize="16"
-                                          Glyph="&#xE792;"/>
-                                <TextBlock Text="名前をつけて保存" />
-                            </StackPanel>
-                            <SplitButton.Flyout>
-                                <MenuFlyout>
-                                    <MenuFlyoutItem Text=".md で保存" />
-                                    <MenuFlyoutItem Text=".txt で保存" />
-                                </MenuFlyout>
-                            </SplitButton.Flyout>
-                        </SplitButton>
-                    </AppBarElementContainer>
+                    <AppBarButton Icon="{ui:FontIcon Glyph=&#xE792;}" Label="名前をつけて保存" />
 
                     <AppBarSeparator />
 
@@ -57,7 +42,7 @@
                     <AppBarButton Icon="{ui:FontIcon Glyph=&#xE946;}" Label="バージョン情報" />
                     
                 </controls:TabbedCommandBarItem>
-                <controls:TabbedCommandBarItem Header="ホーム">
+                <controls:TabbedCommandBarItem Header="ホーム" DefaultLabelPosition="Collapsed">
 
                     <AppBarElementContainer ToolTipService.ToolTip="元に戻す">
                         <SplitButton>
@@ -99,6 +84,7 @@
                     <AppBarButton Icon="Bold" ToolTipService.ToolTip="太字" />
                     <AppBarButton Icon="Underline" ToolTipService.ToolTip="下線" />
                     <AppBarButton Icon="Italic" ToolTipService.ToolTip="斜体" />
+                    <AppBarButton Icon="{ui:FontIcon Glyph=&#xEDE0;}" ToolTipService.ToolTip="取り消し線" />
                 </controls:TabbedCommandBarItem>
             </controls:TabbedCommandBar.MenuItems>
         </controls:TabbedCommandBar>
