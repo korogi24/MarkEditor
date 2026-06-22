@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MarkEditor"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
     xmlns:ui="using:CommunityToolkit.WinUI"
@@ -39,7 +40,22 @@
                     <AppBarSeparator />
 
                     <AppBarButton Icon="Setting" Label="設定" />
-                    <AppBarButton Icon="{ui:FontIcon Glyph=&#xE946;}" Label="バージョン情報" />
+                    <AppBarButton Icon="{ui:FontIcon Glyph=&#xE946;}" Label="バージョン情報">
+                        <AppBarButton.Flyout>
+                            <Flyout>
+                                <StackPanel>
+                                    <TextBlock Style="{ThemeResource BaseTextBlockStyle}" Text="MarkEditor v.1.0.0" Margin="0,0,0,12" />
+                                    <Expander Header="リンク" Width="157">
+                                        <Expander.Content>
+                                            <StackPanel>
+                                                <HyperlinkButton Content="GitHub リポジトリ" NavigateUri="https://github.com/korogi24/MarkEditor" />
+                                            </StackPanel>
+                                        </Expander.Content>
+                                    </Expander>
+                                </StackPanel>
+                            </Flyout>
+                        </AppBarButton.Flyout>
+                    </AppBarButton>
                     
                 </controls:TabbedCommandBarItem>
                 <controls:TabbedCommandBarItem Header="ホーム" DefaultLabelPosition="Collapsed">
