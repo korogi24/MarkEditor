@@ -12,6 +12,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using MarkEditor.TabbedCommandBarItem.Link;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -29,6 +30,23 @@ namespace MarkEditor
 
             this.ExtendsContentIntoTitleBar = true; // Extend the content into the title bar and hide the default titlebar
             this.SetTitleBar(TitleBar); // Set the custom title bar
+        }
+
+        private void LinkSelectorBar_SelectionChanged(SelectorBar sender, SelectorBarSelectionChangedEventArgs args)
+        {
+            if (sender.SelectedItem is SelectorBarItem item)
+            {
+                switch (item.Tag)
+                {
+                    case "link":
+                        LinkContentPresenter.Content = new LinkSelectorItem();
+                        break;
+
+                    case "heading":
+                        LinkContentPresenter.Content = new HeadingSelectorItem();
+                        break;
+                }
+            }
         }
     }
 }
