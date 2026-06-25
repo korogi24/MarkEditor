@@ -12,6 +12,8 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using MarkEditor.Dialogs;
+using MarkEditor.Dialogs.Link;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -31,9 +33,21 @@ namespace MarkEditor
             this.SetTitleBar(TitleBar); // Set the custom title bar
         }
 
-        private void TabbedCommandBar_Loaded(object sender, RoutedEventArgs e)
+        private async void LinkButton_Click(object sender, RoutedEventArgs e)
         {
-            TabbedCommandBar.SelectedItem = HomeTab; // Set the default selected tab to HomeTab
+            ContentDialog dialog = new ContentDialog();
+
+            // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
+            dialog.XamlRoot = this.Content.XamlRoot;
+            dialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
+            dialog.Title = "Save your work?";
+            dialog.PrimaryButtonText = "Save";
+            dialog.SecondaryButtonText = "Don't Save";
+            dialog.CloseButtonText = "Cancel";
+            dialog.DefaultButton = ContentDialogButton.Primary;
+            dialog.Content = new LinkDialog();
+
+            var result = await dialog.ShowAsync();
         }
     }
 }

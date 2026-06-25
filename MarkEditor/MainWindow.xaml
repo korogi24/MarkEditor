@@ -33,7 +33,6 @@
         </TitleBar>
 
         <controls:TabbedCommandBar x:Name="TabbedCommandBar"
-                                   Loaded="TabbedCommandBar_Loaded"
                                    Grid.Row="1"
                                    Margin="5,0">
             <controls:TabbedCommandBar.MenuItems>
@@ -166,7 +165,7 @@
                         </AppBarButton.Flyout>
                     </AppBarButton>
                     <AppBarButton Icon="{ui:FontIcon Glyph=&#xE91B;}" Label="画像" />
-                    <AppBarButton Icon="Link" Label="リンク" />
+                    <AppBarButton Icon="Link" Label="リンク" Click="LinkButton_Click" />
                 </controls:TabbedCommandBarItem>
             </controls:TabbedCommandBar.MenuItems>
         </controls:TabbedCommandBar>
