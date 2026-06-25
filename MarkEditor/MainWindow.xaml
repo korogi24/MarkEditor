@@ -156,27 +156,7 @@
                         </AppBarButton.Flyout>
                     </AppBarButton>
                     <AppBarButton Icon="{ui:FontIcon Glyph=&#xE91B;}" Label="画像" />
-                    <AppBarButton Icon="Link" Label="リンク">
-                        <AppBarButton.Flyout>
-                            <Flyout>
-                                <Flyout.FlyoutPresenterStyle>
-                                    <Style TargetType="FlyoutPresenter">
-                                        <Setter Property="Background" Value="Transparent"/>
-                                    </Style>
-                                </Flyout.FlyoutPresenterStyle>
-                                <StackPanel Spacing="5" Width="320">
-                                    <TextBlock Text="表示テキスト" Style="{ThemeResource BodyStrongTextBlockStyle}" />
-                                    <TextBox />
-                                    <SelectorBar x:Name="LinkSelectorBar" SelectionChanged="LinkSelectorBar_SelectionChanged">
-                                        <SelectorBarItem Tag="link" Text="リンク" />
-                                        <SelectorBarItem Tag="heading" Text="見出し" />
-                                    </SelectorBar>
-                                    <ContentPresenter x:Name="LinkContentPresenter" />
-                                    <Button Content="追加" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Center" Width="320" />
-                                </StackPanel>
-                            </Flyout>
-                        </AppBarButton.Flyout>
-                    </AppBarButton>
+                    <AppBarButton Icon="Link" Label="リンク" />
                 </controls:TabbedCommandBarItem>
             </controls:TabbedCommandBar.MenuItems>
         </controls:TabbedCommandBar>
