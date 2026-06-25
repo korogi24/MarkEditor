@@ -10,16 +10,7 @@
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
                 <!-- Other merged dictionaries here -->
             </ResourceDictionary.MergedDictionaries>
-            
             <!-- Other app resources here -->
-            <Color x:Key="SystemAccentColor">#107C10</Color>
-            <Color x:Key="SystemAccentColorLight1">#13A10E</Color>
-            <Color x:Key="SystemAccentColorLight2">#16C60C</Color>
-            <Color x:Key="SystemAccentColorLight3">#3AD63A</Color>
-
-            <Color x:Key="SystemAccentColorDark1">#0E6E0E</Color>
-            <Color x:Key="SystemAccentColorDark2">#0C5F0C</Color>
-            <Color x:Key="SystemAccentColorDark3">#0A4F0A</Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
