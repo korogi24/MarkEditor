@@ -8,5 +8,5 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <TextBox PlaceholderText="URL を入力" Width="150"/>
+    <TextBox PlaceholderText="URL を入力" />
 </UserControl>
