@@ -22,10 +22,20 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
-        <TitleBar Grid.Row="0" x:Name="TitleBar" Title="MarkEditor" />
 
-        <controls:TabbedCommandBar Grid.Row="1" Margin="5,0">
+        <TitleBar Grid.Row="0" x:Name="TitleBar" Title="MarkEditor">
+            <TitleBar.Content>
+                <AutoSuggestBox Width="360"
+                                VerticalAlignment="Center"
+                                PlaceholderText="検索"
+                                QueryIcon="Find" />
+            </TitleBar.Content>
+        </TitleBar>
+
+        <controls:TabbedCommandBar x:Name="TabbedCommandBar"
+                                   Loaded="TabbedCommandBar_Loaded"
+                                   Grid.Row="1"
+                                   Margin="5,0">
             <controls:TabbedCommandBar.MenuItems>
                 <controls:TabbedCommandBarItem Header="ファイル">
 
@@ -58,7 +68,7 @@
                     </AppBarButton>
                     
                 </controls:TabbedCommandBarItem>
-                <controls:TabbedCommandBarItem Header="ホーム" DefaultLabelPosition="Collapsed">
+                <controls:TabbedCommandBarItem x:Name="HomeTab" Header="ホーム" DefaultLabelPosition="Collapsed">
 
                     <AppBarElementContainer ToolTipService.ToolTip="元に戻す">
                         <SplitButton>

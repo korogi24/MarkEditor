@@ -30,6 +30,10 @@ namespace MarkEditor
             this.ExtendsContentIntoTitleBar = true; // Extend the content into the title bar and hide the default titlebar
             this.SetTitleBar(TitleBar); // Set the custom title bar
         }
+
+        private void TabbedCommandBar_Loaded(object sender, RoutedEventArgs e)
+        {
+            TabbedCommandBar.SelectedItem = HomeTab; // Set the default selected tab to HomeTab
         }
     }
 }
