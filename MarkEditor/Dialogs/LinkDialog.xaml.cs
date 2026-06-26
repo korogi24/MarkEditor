@@ -16,12 +16,9 @@ using Windows.Foundation.Collections;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace MarkEditor.Dialogs.Link
+namespace MarkEditor.Dialogs
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class LinkDialog : Page
+    public sealed partial class LinkDialog : UserControl
     {
         public LinkDialog()
         {

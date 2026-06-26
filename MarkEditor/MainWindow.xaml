@@ -165,7 +165,31 @@
                         </AppBarButton.Flyout>
                     </AppBarButton>
                     <AppBarButton Icon="{ui:FontIcon Glyph=&#xE91B;}" Label="画像" />
-                    <AppBarButton Icon="Link" Label="リンク" Click="LinkButton_Click" />
+                    <AppBarElementContainer>
+                        <DropDownButton>
+                            <SplitButton>
+                                <SplitButton>
+                                    <StackPanel Orientation="Horizontal" Spacing="12">
+                                        <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}"
+                                                  FontSize="16"
+                                                  Glyph="&#xE71B;" />
+                                        <TextBlock FontSize="12"
+                                                   Text="リンク" />
+                                    </StackPanel>
+                                    <SplitButton.Flyout>
+                                        <MenuFlyout>
+                                            <MenuFlyoutItem Icon="{ui:FontIcon Glyph=&#xE7A8;}" Text="Crop" />
+                                            <MenuFlyoutItem Icon="{ui:FontIcon Glyph=&#xF407;}" Text="Crop to Shape" />
+                                            <MenuFlyoutItem Text="Aspect Ratio" />
+                                            <MenuFlyoutSeparator />
+                                            <MenuFlyoutItem Text="Fill" />
+                                            <MenuFlyoutItem Text="Fit" />
+                                        </MenuFlyout>
+                                    </SplitButton.Flyout>
+                                </SplitButton>
+                            </SplitButton>
+                        </DropDownButton>
+                    </AppBarElementContainer>
                 </controls:TabbedCommandBarItem>
             </controls:TabbedCommandBar.MenuItems>
         </controls:TabbedCommandBar>
