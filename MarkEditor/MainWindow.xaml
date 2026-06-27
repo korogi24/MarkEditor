@@ -23,10 +23,18 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TitleBar Grid.Row="0" x:Name="TitleBar" Title="MarkEditor">
+        <TitleBar Grid.Row="0" x:Name="TitleBar">
+            <TitleBar.LeftHeader>
+                <StackPanel Spacing="1" VerticalAlignment="Top" Orientation="Horizontal">
+                    <BitmapIcon UriSource="ms-appx:///Assets/StoreLogo.png" Width="16" Height="16" Margin="15,0,10,0" />
+                    <AppBarButton Icon="Save" Width="40" ToolTipService.ToolTip="上書き保存" />
+                    <AppBarButton Icon="{ui:FontIcon Glyph=&#xE7A7;}" Width="40" ToolTipService.ToolTip="元に戻す" />
+                </StackPanel>
+            </TitleBar.LeftHeader>
             <TitleBar.Content>
-                <AutoSuggestBox Width="360"
+                <AutoSuggestBox Width="450"
                                 VerticalAlignment="Center"
+                                CornerRadius="15"
                                 PlaceholderText="検索"
                                 QueryIcon="Find" />
             </TitleBar.Content>
@@ -34,7 +42,7 @@
 
         <controls:TabbedCommandBar x:Name="TabbedCommandBar"
                                    Grid.Row="1"
-                                   Margin="5,0">
+                                   Margin="5,0,5,5">
             <controls:TabbedCommandBar.MenuItems>
                 <controls:TabbedCommandBarItem Header="ファイル">
 
@@ -54,10 +62,14 @@
                             <Flyout>
                                 <StackPanel>
                                     <TextBlock Style="{ThemeResource BaseTextBlockStyle}" Text="MarkEditor v.1.0.0" Margin="0,0,0,12" />
-                                    <Expander Header="リンク" Width="157">
+                                    <Expander Header="リンク"
+                                              Width="318"
+                                              HorizontalContentAlignment="Left"
+                                              IsExpanded="True">
                                         <Expander.Content>
-                                            <StackPanel>
-                                                <HyperlinkButton Content="GitHub リポジトリ" NavigateUri="https://github.com/korogi24/MarkEditor" />
+                                            <StackPanel Spacing="5">
+                                                <HyperlinkButton Content="MarkEditor" NavigateUri="https://github.com/korogi24/MarkEditor" />
+                                                <HyperlinkButton Content="monaco-editor" NavigateUri="https://github.com/microsoft/monaco-editor" />
                                             </StackPanel>
                                         </Expander.Content>
                                     </Expander>
@@ -166,29 +178,21 @@
                     </AppBarButton>
                     <AppBarButton Icon="{ui:FontIcon Glyph=&#xE91B;}" Label="画像" />
                     <AppBarElementContainer>
-                        <DropDownButton>
-                            <SplitButton>
-                                <SplitButton>
-                                    <StackPanel Orientation="Horizontal" Spacing="12">
-                                        <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}"
-                                                  FontSize="16"
-                                                  Glyph="&#xE71B;" />
-                                        <TextBlock FontSize="12"
-                                                   Text="リンク" />
-                                    </StackPanel>
-                                    <SplitButton.Flyout>
-                                        <MenuFlyout>
-                                            <MenuFlyoutItem Icon="{ui:FontIcon Glyph=&#xE7A8;}" Text="Crop" />
-                                            <MenuFlyoutItem Icon="{ui:FontIcon Glyph=&#xF407;}" Text="Crop to Shape" />
-                                            <MenuFlyoutItem Text="Aspect Ratio" />
-                                            <MenuFlyoutSeparator />
-                                            <MenuFlyoutItem Text="Fill" />
-                                            <MenuFlyoutItem Text="Fit" />
-                                        </MenuFlyout>
-                                    </SplitButton.Flyout>
-                                </SplitButton>
-                            </SplitButton>
-                        </DropDownButton>
+                        <SplitButton>
+                            <StackPanel Orientation="Horizontal" Spacing="12">
+                                <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}"
+                                          FontSize="16"
+                                          Glyph="&#xE71B;" />
+                                <TextBlock FontSize="12"
+                                           Text="リンク" />
+                            </StackPanel>
+                            <SplitButton.Flyout>
+                                <MenuFlyout>
+                                    <MenuFlyoutItem Text="リンク" Click="LinkButton_Click" />
+                                    <MenuFlyoutItem Text="見出し" />
+                                </MenuFlyout>
+                            </SplitButton.Flyout>
+                        </SplitButton>
                     </AppBarElementContainer>
                 </controls:TabbedCommandBarItem>
             </controls:TabbedCommandBar.MenuItems>
