@@ -42,5 +42,16 @@
         </TitleBar>
 
         <tcb:TabbedCommandBarControl Grid.Row="1" x:Name="TabbedCommandBar" />
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <WebView2 x:Name="Monaco" Grid.Column="0" />
+
+            <WebView2 x:Name="Preview" Grid.Column="1" />
+        </Grid>
     </Grid>
 </Window>
