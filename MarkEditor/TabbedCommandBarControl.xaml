@@ -32,14 +32,13 @@
                         <Flyout>
                             <StackPanel>
                                 <TextBlock Style="{ThemeResource BaseTextBlockStyle}" Text="MarkEditor v.1.0.0" Margin="0,0,0,12" />
-                                <Expander Header="リンク"
+                                <Expander Header="依存パッケージのバージョン"
                                               Width="318"
                                               HorizontalContentAlignment="Left"
                                               IsExpanded="True">
                                     <Expander.Content>
                                         <StackPanel Spacing="5">
-                                            <HyperlinkButton Content="MarkEditor" NavigateUri="https://github.com/korogi24/MarkEditor" />
-                                            <HyperlinkButton Content="monaco-editor" NavigateUri="https://github.com/microsoft/monaco-editor" />
+                                            <TextBlock Text="monaco-editor v.0.55.1" />
                                         </StackPanel>
                                     </Expander.Content>
                                 </Expander>
