@@ -116,7 +116,7 @@
             Controls.Add(menuStrip);
             MainMenuStrip = menuStrip;
             Name = "Form1";
-            Text = "Form1";
+            Text = "MarkEditor";
             menuStrip.ResumeLayout(false);
             menuStrip.PerformLayout();
             ResumeLayout(false);
