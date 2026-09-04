@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MarkEditor (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "MarkEditor (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

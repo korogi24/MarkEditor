@@ -1,9 +1,13 @@
 <Solution>
   <Configurations>
-    <Platform Name="Any CPU" />
+    <Platform Name="ARM64" />
     <Platform Name="x64" />
+    <Platform Name="x86" />
   </Configurations>
-  <Project Path="MarkEditor/MarkEditor.csproj" Id="095b93af-655d-4736-8b7a-8f5302be1320">
+  <Project Path="MarkEditor/MarkEditor.csproj" Id="74d1bc7d-3c00-41f3-87e6-5348f70dd5d9">
+    <Platform Solution="*|ARM64" Project="ARM64" />
     <Platform Solution="*|x64" Project="x64" />
+    <Platform Solution="*|x86" Project="x86" />
+    <Deploy />
   </Project>
 </Solution>
