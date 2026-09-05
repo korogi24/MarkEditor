@@ -29,7 +29,14 @@
                                 QueryIcon="Find" />
             </TitleBar.Content>
         </TitleBar>
-        
-        <local:ToolBar Grid.Row="1" />
+
+        <Border Grid.Row="1"
+                Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                BorderThickness="1"
+                Margin="4"
+                CornerRadius="8">
+            <local:ToolBar />
+        </Border>
     </Grid>
 </Window>
