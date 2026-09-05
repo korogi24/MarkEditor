@@ -30,13 +30,6 @@
             </TitleBar.Content>
         </TitleBar>
 
-        <Border Grid.Row="1"
-                Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
-                BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
-                BorderThickness="1"
-                Margin="4"
-                CornerRadius="8">
-            <local:ToolBar />
-        </Border>
+        <local:ToolBar Grid.Row="1" />
     </Grid>
 </Window>

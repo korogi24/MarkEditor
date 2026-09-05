@@ -32,25 +32,27 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <controls:Ribbon>
-        <controls:RibbonCollapsibleGroup Label="クリップボード"
-                                         IconSource="{ui:SymbolIconSource Symbol=Paste}"
-                                         Style="{StaticResource RibbonLeftCollapsibleGroupStyle}">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+    <StackPanel Spacing="4">
+        <controls:Ribbon>
+            <controls:RibbonCollapsibleGroup Label="クリップボード"
+                                             IconSource="{ui:SymbolIconSource Symbol=Paste}"
+                                             Style="{StaticResource RibbonLeftCollapsibleGroupStyle}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
 
-                <AppBarButton Icon="Paste" Label="貼り付け" />
-                <AppBarButton Grid.Column="1" Icon="Cut" Label="切り取り" />
-                <AppBarButton Grid.Row="1" Icon="SelectAll" Label="すべて選択" />
-                <AppBarButton Grid.Row="1" Grid.Column="1" Icon="Copy" Label="コピー" />
-            </Grid>
-        </controls:RibbonCollapsibleGroup>
-    </controls:Ribbon>
+                    <AppBarButton Icon="Paste" Label="貼り付け" />
+                    <AppBarButton Grid.Column="1" Icon="Cut" Label="切り取り" />
+                    <AppBarButton Grid.Row="1" Icon="SelectAll" Label="すべて選択" />
+                    <AppBarButton Grid.Row="1" Grid.Column="1" Icon="Copy" Label="コピー" />
+                </Grid>
+            </controls:RibbonCollapsibleGroup>
+        </controls:Ribbon>
+    </StackPanel>
 </UserControl>
