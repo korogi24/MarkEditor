@@ -26,6 +26,10 @@ namespace MarkEditor
         public MainWindow()
         {
             InitializeComponent();
+
+            // TitleBar をカスタム
+            this.ExtendsContentIntoTitleBar = true;
+            this.SetTitleBar(TitleBar);
         }
     }
 }

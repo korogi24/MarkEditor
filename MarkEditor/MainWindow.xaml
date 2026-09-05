@@ -14,6 +14,20 @@
     </Window.SystemBackdrop>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
+        <TitleBar x:Name="TitleBar"
+                  Title="MarkEditor">
+            <TitleBar.Content>
+                <AutoSuggestBox Width="360"
+                                VerticalAlignment="Center"
+                                PlaceholderText="検索"
+                                QueryIcon="Find" />
+            </TitleBar.Content>
+        </TitleBar>
     </Grid>
 </Window>
