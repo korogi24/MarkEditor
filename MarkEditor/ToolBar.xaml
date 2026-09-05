@@ -7,6 +7,7 @@
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="using:CommunityToolkit.WinUI"
     mc:Ignorable="d">
 
     <UserControl.Resources>
@@ -30,4 +31,26 @@
             </Style>
         </ResourceDictionary>
     </UserControl.Resources>
+
+    <controls:Ribbon>
+        <controls:RibbonCollapsibleGroup Label="クリップボード"
+                                         IconSource="{ui:SymbolIconSource Symbol=Paste}"
+                                         Style="{StaticResource RibbonLeftCollapsibleGroupStyle}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <AppBarButton Icon="Paste" Label="貼り付け" />
+                <AppBarButton Grid.Column="1" Icon="Cut" Label="切り取り" />
+                <AppBarButton Grid.Row="1" Icon="SelectAll" Label="すべて選択" />
+                <AppBarButton Grid.Row="1" Grid.Column="1" Icon="Copy" Label="コピー" />
+            </Grid>
+        </controls:RibbonCollapsibleGroup>
+    </controls:Ribbon>
 </UserControl>
