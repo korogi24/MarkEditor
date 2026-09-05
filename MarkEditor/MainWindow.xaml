@@ -29,5 +29,7 @@
                                 QueryIcon="Find" />
             </TitleBar.Content>
         </TitleBar>
+        
+        <local:ToolBar Grid.Row="1" />
     </Grid>
 </Window>
