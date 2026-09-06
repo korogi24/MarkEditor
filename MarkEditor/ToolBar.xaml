@@ -19,21 +19,37 @@
             <Style BasedOn="{StaticResource DefaultAppBarButtonStyle}" TargetType="AppBarButton">
                 <Setter Property="LabelPosition" Value="Collapsed" />
                 <Setter Property="Width" Value="48" />
-                <Setter Property="Margin" Value="1" />
                 <Setter Property="Height" Value="48" />
             </Style>
 
             <Style BasedOn="{StaticResource DefaultAppBarToggleButtonStyle}" TargetType="AppBarToggleButton">
                 <Setter Property="LabelPosition" Value="Collapsed" />
                 <Setter Property="Width" Value="48" />
-                <Setter Property="Margin" Value="1" />
                 <Setter Property="Height" Value="48" />
+            </Style>
+
+            <Style TargetType="Grid">
+                <Setter Property="ColumnSpacing" Value="1" />
+                <Setter Property="RowSpacing" Value="1" />
             </Style>
         </ResourceDictionary>
     </UserControl.Resources>
 
     <StackPanel Spacing="4">
         <controls:Ribbon>
+            <controls:RibbonGroup Label="元に戻す"
+                                  Style="{StaticResource RibbonLeftGroupStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <AppBarButton Icon="Undo" />
+                    <AppBarButton Grid.Row="1" Icon="Redo" />
+                </Grid>
+            </controls:RibbonGroup>
+            
             <controls:RibbonCollapsibleGroup Label="クリップボード"
                                              IconSource="{ui:SymbolIconSource Symbol=Paste}"
                                              Style="{StaticResource RibbonLeftCollapsibleGroupStyle}">
