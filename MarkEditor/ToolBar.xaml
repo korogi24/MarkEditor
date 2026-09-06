@@ -53,6 +53,26 @@
                     <AppBarButton Grid.Row="1" Grid.Column="1" Icon="Copy" Label="コピー" />
                 </Grid>
             </controls:RibbonCollapsibleGroup>
+
+            <controls:RibbonCollapsibleGroup Label="ファイル"
+                                             IconSource="{ui:FontIconSource Glyph=&#xE838;}"
+                                             Style="{StaticResource RibbonLeftCollapsibleGroupStyle}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <AppBarButton Icon="{ui:FontIcon Glyph=&#xECC8;}" Label="新規作成" />
+                    <AppBarButton Grid.Column="1" Icon="NewWindow" Label="新しいウィンドウ" />
+                    <AppBarButton Grid.Row="1" Icon="{ui:FontIcon Glyph=&#xE838;}" Label="開く" />
+                    <AppBarButton Grid.Row="1" Grid.Column="1" Icon="Save" Label="保存" />
+                </Grid>
+            </controls:RibbonCollapsibleGroup>
         </controls:Ribbon>
     </StackPanel>
 </UserControl>
